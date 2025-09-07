@@ -2,7 +2,7 @@ package mid1.nested.local;
 
 import java.lang.reflect.Field;
 
-public class LocalOuterV3 {
+public class LocalOuterV4 {
 
     private int outInstanceVar = 3;
 
@@ -25,12 +25,15 @@ public class LocalOuterV3 {
         }
 
         LocalPrinter printer = new LocalPrinter();
-        // printer.print();
+        // 만약 localVar의 값을 변경한다면 ?
+        // localVar = 10; 컴파일 오류
+        // paramVar = 20; 컴파일 오류
+
         return printer;
     }
 
     public static void main(String[] args) {
-        LocalOuterV3 localOuterV1 = new LocalOuterV3();
+        LocalOuterV4 localOuterV1 = new LocalOuterV4();
         Printer printer = localOuterV1.process(2);
         // process()의 스택 프레임이 사라진 이후에 실행
         printer.print();
